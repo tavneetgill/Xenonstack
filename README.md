@@ -8,6 +8,7 @@ Our website is hosted in a separate branch named `tav`. To access the website so
 
 ```bash
 git checkout tav
+```
 
 ## Linux Command Script
 In the main branch, you will find a Linux command script (script.sh) that automates certain tasks related to our project. The script is designed to be run on a Linux environment.
@@ -17,7 +18,9 @@ Navigate to the root directory of the repository.
 
 Ensure that the script has execute permissions:
 
+```bash
 chmod +x script.sh
+```
 
 Run the script:
 ./script.sh
