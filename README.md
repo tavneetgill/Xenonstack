@@ -4,7 +4,7 @@ This repository contains the source code for my website and custom linux script.
 
 ## Grocery-Website Branch
 
-Our website is hosted in a separate branch named `tav`. To access the website source code and related files, switch to the `tav` branch using the following command:
+The website is hosted in a separate branch named `tav`. To access the website source code and related files, switch to the `tav` branch using the following command:
 
 ```bash
 git checkout tav
