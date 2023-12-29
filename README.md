@@ -1,6 +1,6 @@
 # Grocery Site Project
 
-![Site Preview](https://asset.cloudinary.com/drh2sdysv/e95950263a1c1b561fd66c62ebd5161c)
+![Site Preview](https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fimages%2Fsearch%2Fnature%2F&psig=AOvVaw1_Dc2LpXus-Q64u7QYtA-o&ust=1703924356513000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKim3oKbtIMDFQAAAAAdAAAAABAD)
 
 Login
 (https://asset.cloudinary.com/drh2sdysv/13ba19cb027a06eb46fa853934ce3fba)
