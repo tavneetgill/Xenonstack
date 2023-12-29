@@ -1,64 +1,100 @@
-import React, { useEffect, useState } from "react"
-import axios from "axios"
-import { useNavigate, Link } from "react-router-dom"
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate, Link } from "react-router-dom";
 
+const containerStyle = {
+  background: "linear-gradient(to right, #00c6ff, #0072ff)",
+  height: "100vh",
+  width:"100vw",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+};
 
-function Login() {
-    const history=useNavigate();
+const formStyle = {
+  width: "300px",
+  padding: "20px",
+  borderRadius: "8px",
+  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+  background: "white",
+};
 
-    const [email,setEmail]=useState('')
-    const [password,setPassword]=useState('')
+const inputStyle = {
+  width: "100%",
+  padding: "10px",
+  margin: "8px 0",
+  display: "inline-block",
+  border: "1px solid #ccc",
+  boxSizing: "border-box",
+  borderRadius: "4px",
+};
 
-    async function submit(e){
-        e.preventDefault();
+const buttonStyle = {
+  backgroundColor: "#4CAF50",
+  color: "white",
+  padding: "14px 20px",
+  margin: "8px 0",
+  border: "none",
+  borderRadius: "4px",
+  cursor: "pointer",
+  width: "100%",
+};
 
-        try{
-
-            await axios.post("http://localhost:8000/signup",{
-                email,password
-            })
-            .then(res=>{
-                if(res.data=="exist"){
-                    alert("User already exists")
-                }
-                else if(res.data=="notexist"){
-                    history("/home",{state:{id:email}})
-                }
-            })
-            .catch(e=>{
-                alert("wrong details")
-                console.log(e);
-            })
-
+function Signup() {
+    const history = useNavigate();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+  
+    async function submit(e) {
+      e.preventDefault();
+  
+      try {
+        const response = await axios.post("http://localhost:8000/signup", {
+          email,
+          password,
+        });
+  
+        if (response.data === "exist") {
+          alert("User already exists");
+        } else if (response.data === "notexist") {
+          history("/home", { state: { id: email } });
         }
-        catch(e){
-            console.log(e);
-
-        }
-
+      } catch (error) {
+        alert("Error occurred during signup");
+        console.error(error);
+      }
     }
-
-
+  
     return (
-        <div className="login">
-
-            <h1>Signup</h1>
-
-            <form action="POST">
-                <input type="email" onChange={(e) => { setEmail(e.target.value) }} placeholder="Email"  />
-                <input type="password" onChange={(e) => { setPassword(e.target.value) }} placeholder="Password" />
-                <input type="submit" onClick={submit} />
-
-            </form>
-
-            <br />
-            <p>OR</p>
-            <br />
-
-            <Link to="/">Login Page</Link>
-
+      <div style={containerStyle}>
+        <div style={formStyle} className="signup">
+          <h1 style={{ textAlign: "center", color: "#333" }}>Signup</h1>
+          <form onSubmit={submit} method="POST">
+            <input
+              style={inputStyle}
+              type="email"
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
+            />
+            <input
+              style={inputStyle}
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+            />
+            <button style={buttonStyle} type="submit">
+              Signup
+            </button>
+          </form>
+          <br />
+          <p style={{ textAlign: "center", color: "#333" }}>OR</p>
+          <br />
+          <Link style={{ textAlign: "center", display: "block", color: "#333" }} to="/">
+            Login Page
+          </Link>
         </div>
-    )
-}
-
-export default Login
+      </div>
+    );
+  }
+  
+  export default Signup;

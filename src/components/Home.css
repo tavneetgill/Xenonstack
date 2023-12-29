@@ -1,0 +1,141 @@
+/* Home.css */
+
+/* Reset some default styles */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.homepage{
+  height: 100vh;
+  width: 100vw;
+}
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  /* Styles for the carousel container */
+  .carousel-container {
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+  }
+  
+  /* Styles for the welcome heading */
+  .welcome-heading {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Styles for the featured items heading */
+  .featured-items-heading {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Styles for the grocery item cards */
+  .grocery-item-card {
+    width: 200px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  
+  }
+  
+  /* Styles for the grocery items container */
+  .grocery-items-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    overflow: hidden;
+  }
+  
+  /* Styles for the footer */
+  .footer {
+    width: 100vw;
+    background: #333;
+    padding: 10px;
+    color: white;
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  /* Update Home.css */
+
+  .navbar {
+    width: 100vw;
+    background-color: #333;
+    height: 60px; /* Set a fixed height for the navbar */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Center items vertically */
+}
+
+/* Style the navigation links */
+.nav-link {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    margin-right: 50px;
+}
+  
+  .nav-link:hover {
+    background-color: #ddd; /* Change background color on hover */
+    color: black; /* Change text color on hover */
+  }
+
+  .carousel-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animated-text {
+    font-size: 36px;
+    font-weight: bold;
+    color: #4CAF50;  /* Set your desired color */
+    animation: fadeIn 1.5s ease-in-out;
+    text-align: center; /* Center the text */
+    margin-top: 20px; /* Add margin for spacing */
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .featured-items-heading {
+    font-size: 34px;
+    font-weight: bold;
+    color: #FF5722;  /* Set your desired color */
+    animation: slideIn 1s ease-in-out;
+    text-align: center; /* Center the text */
+    margin-top: 30px; /* Add margin for spacing */
+  }
+  .slider-main{
+    width: 100vw;;
+  }

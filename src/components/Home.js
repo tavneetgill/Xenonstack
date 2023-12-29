@@ -1,16 +1,21 @@
-import React from "react"
-import {useLocation, useNavigate} from 'react-router-dom';
+// Home.js
 
-function Home (){
-    const location=useLocation()
+import React from "react";
+import NavBar from './NavBar'
+import "./Home.css"; // Import your CSS file
+import Carousel from "./Carousel";
+import GroceryItems from "./GroceryItemCard";
+import Footer from "./Footer";
 
-    return (
-        <div className="homepage">
+const Home = () => (
+  <div className="homepage">
+    <NavBar />
+    <h1 className="animated-text">Welcome to Our Grocery Store!</h1>
+    <Carousel />
+    <h2 className="featured-items-heading">Featured Grocery Items</h2>
+    <GroceryItems />
+    <Footer />
+  </div>
+);
 
-            <h1>Hello {location.state.id} and welcome to the home</h1>
-
-        </div>
-    )
-}
-
-export default Home
+export default Home;
